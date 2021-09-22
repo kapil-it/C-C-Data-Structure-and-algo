@@ -1,0 +1,20 @@
+#!/bin/sh
+   pid=`ps aux | grep -i Mue_InUse | awk '{print $2}' | head -1`
+  echo "$pid"
+  
+  
+  
+  
+  *******************************************************************************
+  other command
+  cat filename
+  uname -a  show the version of the OS and karnal
+  head filename
+  tail filename
+  
+  #generate strace log for ls-la command
+  strace -o /tmp/strace.log ls-la
+  #using pid run strace for a process
+  strace -p pid -o /tmp/strace.log
+  
+  
