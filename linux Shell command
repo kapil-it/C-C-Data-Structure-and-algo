@@ -16,5 +16,7 @@
   strace -o /tmp/strace.log ls-la
   #using pid run strace for a process
   strace -p pid -o /tmp/strace.log
+  #generate the strace for c program using terminal
+  strace -o /tmp/strace.log ./filename
   
   
