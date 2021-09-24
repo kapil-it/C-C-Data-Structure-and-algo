@@ -18,5 +18,12 @@
   strace -p pid -o /tmp/strace.log
   #generate the strace for c program using terminal
   strace -o /tmp/strace.log ./filename
-  
+  #how to show all process with only pid
+  ps -eo pid,cmd
+  #how to get only pid of the process based on name
+  ps -eo pid, cmd |grep -i process name
+  #To show all the details about the all process
+  ps -aux
+  #to show all the detail about a dedicate process
+  ps -aux |grep -i process name
   
