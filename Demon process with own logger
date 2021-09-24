@@ -1,0 +1,113 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <uv.h>
+#include <unistd.h>
+#include<string.h>
+#include <sys/types.h>
+#include <errno.h>  
+#include <sys/wait.h>
+#include <stdarg.h>
+#include <time.h>
+
+int log_writer(char *format,...) {
+	va_list args;
+	FILE *f = fopen("/var/McAfee/agent/logs/test.log","a");
+	time_t t;
+	struct tm *tm;
+	char * str;
+	if(f==NULL)
+		return 0;
+	t = time(NULL);
+    tm = localtime(&t);
+	str=asctime(tm);
+	str[strlen(str)-1] = '\0';
+    fprintf(f,"%s\t ", str);
+	//Linux
+	fprintf(f, "[%d]",getpid());
+	//Windows
+//	fprintf(f, "[%d]",GetCurrentProcessId());
+	va_start(args,format);
+	vfprintf(f,format, args);
+	va_end(args);		
+	fprintf(f, "\n");
+	fclose(f);
+}
+
+void runcmd()
+{
+ pid_t child_pid;
+  int status;
+  int j;
+  char * mypid;
+  const size_t max_pid_len = 12;// Could be system dependent.
+   int pid = getpid();
+   printf("mue process pid = %d\n",pid);
+   log_writer("mue process pid = %d\n",pid);
+
+	//convert parent process pid int to char*
+	mypid = malloc(max_pid_len + 1);
+	snprintf(mypid, max_pid_len, "%d", pid);
+	printf("string pid= %s\n",mypid);
+	log_writer("string pid=  = %s\n",mypid);
+
+    char final_command[50] = "strace -p ";
+    char file[] = " -o /tmp/strace.log";
+    strcat(final_command,mypid);
+    printf("first attampt String: %s\n", final_command);
+	log_writer("first attampt String: %s\n",final_command);
+    strcat(final_command,file);
+    printf("final String: %s\n", final_command);
+	log_writer("final String: %s\n",final_command);
+    
+    
+  
+  child_pid = fork();
+  if(child_pid == 0) {
+    /* This is done by the child process. */
+    printf("child process pid=%d\n",getpid());
+	log_writer("child process pid= %d\n",getpid());
+    printf("child block\n");
+	log_writer("child block\n");
+  
+    /*execv(programName, args);*/
+    /*system("strace -p 47091 -o /tmp/strace.log");*/
+    system(final_command);
+    /* If execv returns, it must have failed. */
+
+    printf("child about to finish\n");
+	log_writer("hild about to finish\n");
+    exit(0);
+  }
+  else 
+  {
+     /* This is run by the parent.  Wait for the child
+        to terminate. */
+        system("ls");
+        for(j=0;j<10;j++)
+        {
+          sleep(1);
+          printf("%d ",j);
+		  log_writer("%d\n",j);
+        }
+        system("ls");
+        printf("\n");
+        for(j=11;j<20;j++)
+        {
+          sleep(1);
+          printf("%d ",j);
+		  log_writer("%d\n",j);
+        }
+        printf("abc\n");
+		log_writer("abc\n");
+        printf("d\n");
+		log_writer("d\n",j);
+   }
+   
+  }
+
+
+int main()
+{
+  runcmd();
+  return 0;
+}
