@@ -1,0 +1,32 @@
+#include <stdarg.h>
+#include <time.h>
+
+int log_writer(char *format,...) {
+	va_list args;
+	FILE *f = fopen("/var/McAfee/agent/logs/test.log","a");
+	time_t t;
+	struct tm *tm;
+	char * str;
+	if(f==NULL)
+		return 0;
+	t = time(NULL);
+    tm = localtime(&t);
+	str=asctime(tm);
+	str[strlen(str)-1] = '\0';
+    fprintf(f,"%s\t ", str);
+	//Linux
+	fprintf(f, "[%d]",getpid());
+	//Windows
+//	fprintf(f, "[%d]",GetCurrentProcessId());
+	va_start(args,format);
+	vfprintf(f,format, args);
+	va_end(args);		
+	fprintf(f, "\n");
+	fclose(f);
+}
+
+main()
+{
+  log_writer("Logger\n");
+  log_writer("process id = %d\n",getpid());
+}
