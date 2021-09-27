@@ -1,5 +1,5 @@
 #!/bin/sh
-   pid=`ps aux | grep -i Mue_InUse | awk '{print $2}' | head -1`
+   pid=`ps aux | grep -i Search_String | awk '{print $2}' | head -1`
   echo "$pid"
   
   
