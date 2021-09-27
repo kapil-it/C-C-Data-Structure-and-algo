@@ -26,4 +26,8 @@
   ps -aux
   #to show all the detail about a dedicate process
   ps -aux |grep -i process name
+  #want to fatch path of the utility or process
+  which process_name
+  which ls 
+  which strace
   
