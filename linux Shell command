@@ -30,4 +30,7 @@
   which process_name
   which ls 
   which strace
+  #want to know the which lib ,  process are using or want to debug the binary .so or .out file
+  objdump -p process-name with path
+  Ex- objdump -p /opt/McAfee/agent/bin/Mue
   
