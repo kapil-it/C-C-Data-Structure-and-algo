@@ -34,20 +34,17 @@
   #List all shared lib ,  executable or library internally are using or want to debug the binary.
   ldd Mue
   
-  #When we have an object file and we don’t have the source code with us and we have to find out the maximum information from the file. To do so objdump plays a very vital role. The main purpose of the objdump command is to help in debugging the object file. It is used for the following listed purposes:
+#When we have an object file and we don’t have the source code with us and we have to find out the maximum information from the file. To do so objdump plays a very vital role. The main purpose of the objdump command is to help in debugging the object file. It is used for the following listed purposes:
+#To retrieve archive header
+#To get the offset of the file
+#To get the bfdname
+#To get the demangle
+#To debug the file
+#To disassemble the file
+#To retrieve the file headers
+objdump -p process-name
+Ex- objdump -p /opt/McAfee/agent/bin/Mue
 
-To retrieve archive header
-To get the offset of the file
-To get the bfdname
-To get the demangle
-To debug the file
-To disassemble the file
-To retrieve the file headers
-  objdump -p process-name with path
-  Ex- objdump -p /opt/McAfee/agent/bin/Mue
-
-
-
-  #display all the detail of executable to library
-  file executable_name
+ #display all the detail (property information) of executable to library
+ file executable_name
   
