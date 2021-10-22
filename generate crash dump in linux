@@ -1,0 +1,28 @@
+The crashdump can be checked and enabled in Linux as below (with root or admin user). Hope this will help
+
+ulimit -c
+0
+ulimit -c unlimited
+ulimit -c
+
+For system wide setting of ulimit parameters and to preserve the settings even after reboot do this as below at end of file. 
+After this setting reboot to make this settings. Reading this file is self explanatory too.
+Settings are in KBs.
+
+cat /etc/security/limits.conf
+
+#echo -e "
+* hard core unlimited
+* soft core unlimited " >> /etc/security/limits.conf
+
+#cat /etc/security/limits.conf
+
+Step 4) Reboot
+#reboot
+
+Step 5)
+
+uname -a
+ulimit -a
+
+run the application
