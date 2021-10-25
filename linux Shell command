@@ -45,6 +45,9 @@
 objdump -p process-name
 Ex- objdump -p /opt/McAfee/agent/bin/Mue
 
- #display all the detail (property information) of executable to library
+ #display all the detail (property information) of executable or static or shared library
  file executable_name
   
+  # diffrence between yum and RPM 
+  #diffrence debin based os and RPM based OS
+  https://alldifferences.com/deb-vs-rpm/
