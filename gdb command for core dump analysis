@@ -1,0 +1,13 @@
+#https://www.irya.unam.mx/computo/sites/manuales/fce12/debugger/cl/index.htm#commandref/gdb_mode/cmd_info_sharedl.htm
+bt (backtrack) - to show call stack
+info sharedlibrary - This command prints the names of all currently loaded shared libraries.
+info threads - This command prints all threads running in side application
+thread apply all bt - This command is showing display thread wise call stack.
+info args - 
+info breakpoints
+info files
+info functions
+info handle
+info signals
+info line num  
+info locals
