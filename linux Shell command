@@ -57,7 +57,7 @@ Ex- objdump -p /opt/McAfee/agent/bin/Mue
   
 ps -x  show process list 
 kill -9 pid   kill the process
-nm exe_name show all symbol related to all binary
+nm exe_name show all symbol related to binary/exe
 file exe/binary_name show ll info about file
 cat file name - show the file on console
 mv - move
