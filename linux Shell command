@@ -51,3 +51,27 @@ Ex- objdump -p /opt/McAfee/agent/bin/Mue
   # diffrence between yum and RPM 
   #diffrence debin based os and RPM based OS
   https://alldifferences.com/deb-vs-rpm/
+  
+  
+  
+  
+ps -x  show process list 
+kill -9 pid   kill the process
+nm exe_name show all symbol related to all binary
+file exe/binary_name show ll info about file
+cat file name - show the file on console
+mv - move
+cp -copy
+rm -rf directory name or file name - delete whole folder or directory
+ls - list all file or folder
+grep - this command use for facing valid info from yoyr result
+example-
+ls | grep string search
+ps -x | grep string search
+whoami - show current user name
+pwd - show current working folder
+mkdir folder_name - create folder
+rmdir - delete folder
+cd - change directory
+uname -a show OS name and version
+tar option filename - zip or unzip file
