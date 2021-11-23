@@ -75,3 +75,8 @@ rmdir - delete folder
 cd - change directory
 uname -a show OS name and version
 tar option filename - zip or unzip file
+#how to read the rpm file contant
+rpm -q --scripts rpm-file-name
+#how to get currently runniing process
+ps -x|grep -i 'masvc self_start'|grep -v grep
+ps -x|grep -i 'masvc self_start'|grep -v grep|wc -l
