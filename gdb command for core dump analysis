@@ -11,3 +11,9 @@ info handle
 info signals
 info line num  
 info locals
+
+bt
+where
+p *self
+p self
+frame 2
