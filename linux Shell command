@@ -12,6 +12,11 @@
   head filename
   tail filename
   
+  #to fatch the particuler field from file based on condition
+  awk '$17>90{print $17}' cpu_12_6_1.txt
+  #to fach the whole line based on condition from file
+  awk '$17>90' cpu_12_6_1.txt
+  
   #generate strace log for ls-la command
   strace -o /tmp/strace.log ls-la
   #using pid run strace for a process
