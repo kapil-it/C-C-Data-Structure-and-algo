@@ -17,3 +17,15 @@ where
 p *self
 p self
 frame 2
+
+
+******************************************************
+if you got below warning when we will analysized the core dump
+warning: Selected architecture i386:x86-64 is not compatible with reported target architecture i386
+Note - its means binarya core dump file is disfferent archicture. means 32 bit or 64 bit.
+
+below command we can check 
+file corefile
+file /opt/McAfee/agent/bin/cmdagent
+
+so intsall the same MA , or component , based on dump architure.
