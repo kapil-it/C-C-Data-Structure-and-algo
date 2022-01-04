@@ -1,7 +1,6 @@
 The crashdump can be checked and enabled in Linux as below (with root or admin user). Hope this will help
 
-ulimit -c
-0
+ulimit -c 0
 ulimit -c unlimited
 ulimit -c
 
