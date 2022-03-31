@@ -1,3 +1,6 @@
+#change the directory generation core dump file so it will generate iside /tmp folder
+echo "/tmp/core" > /proc/sys/kernel/core_pattern
+
 #https://www.irya.unam.mx/computo/sites/manuales/fce12/debugger/cl/index.htm#commandref/gdb_mode/cmd_info_sharedl.htm
 bt (backtrack) - to show call stack
 info sharedlibrary - This command prints the names of all currently loaded shared libraries.
