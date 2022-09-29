@@ -2,6 +2,7 @@
 echo "/tmp/core" > /proc/sys/kernel/core_pattern
 
 #https://www.irya.unam.mx/computo/sites/manuales/fce12/debugger/cl/index.htm#commandref/gdb_mode/cmd_info_sharedl.htm
+gdb /opt/McAfee/agent/bin/masvc /tmp/CoreDump
 bt (backtrack) - to show call stack
 info sharedlibrary - This command prints the names of all currently loaded shared libraries.
 info threads - This command prints all threads running in side application
