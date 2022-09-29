@@ -1,0 +1,567 @@
+root@401UBU1604:~# ps -eaf | grep ma
+root        36     2  0 Sep26 ?        00:00:00 [fsnotify_mark]
+root        54     2  0 Sep26 ?        00:00:00 [acpi_thermal_pm]
+root        86     2  0 Sep26 ?        00:00:00 [charger_manager]
+root      1500  1468  0 10:03 pts/0    00:00:00 grep --color=auto ma
+root     28478     1  0 Sep26 ?        00:00:07 /opt/McAfee/agent/bin/masvc self_start
+mfe      28506     1  0 Sep26 ?        00:02:37 /opt/McAfee/agent/bin/macmnsvc self_start
+root     28513     1  0 Sep26 ?        00:00:00 /opt/McAfee/agent/bin/macompatsvc self_start
+root     28543 28513  0 Sep26 ?        00:00:03 /opt/McAfee/agent/bin/macompatsvc self_start
+root     28544 28543  0 Sep26 ?        00:00:03 /opt/McAfee/agent/bin/macompatsvc self_start
+root     28545 28543  0 Sep26 ?        00:00:09 /opt/McAfee/agent/bin/macompatsvc self_start
+root     28550 28543  0 Sep26 ?        00:00:00 /opt/McAfee/agent/bin/macompatsvc self_start
+root     28551 28543  0 Sep26 ?        00:00:00 /opt/McAfee/agent/bin/macompatsvc self_start
+root     28552 28543  0 Sep26 ?        00:00:00 /opt/McAfee/agent/bin/macompatsvc self_start
+root     28553 28543  0 Sep26 ?        00:00:00 /opt/McAfee/agent/bin/macompatsvc self_start
+root@401UBU1604:~# cd /var/McAfee/agent/logs
+root@401UBU1604:/var/McAfee/agent/logs# ls -lrt
+total 136304
+-rw-r--r-- 1 root root  2097154 Sep 26 14:08 masvc_401UBU1604_backup_1.log
+-rw-r--r-- 1 root root     3162 Sep 26 14:08 mapolicy_401UBU1604.log
+-rw-r--r-- 1 root root  1390164 Sep 26 14:17 McScript_deploy.log
+-rw-r--r-- 1 root root 12323741 Sep 26 14:42 masvc_401UBU1604.log
+-rw-r--r-- 1 mfe  mfe  20971543 Sep 28 19:30 macmnsvc_401UBU1604_backup_5.log
+-rw-r--r-- 1 mfe  mfe  20971588 Sep 28 23:11 macmnsvc_401UBU1604_backup_4.log
+-rw-r--r-- 1 mfe  mfe  20971616 Sep 29 02:49 macmnsvc_401UBU1604_backup_3.log
+-rw-r--r-- 1 mfe  mfe  20971560 Sep 29 06:06 macmnsvc_401UBU1604_backup_2.log
+-rw-r--r-- 1 root root  1073911 Sep 29 08:21 macompatsvc_401UBU1604.log
+-rw-r--r-- 1 root root 15974539 Sep 29 09:22 McScript.log
+-rw-r--r-- 1 mfe  mfe  20971570 Sep 29 09:38 macmnsvc_401UBU1604_backup_1.log
+-rw-r--r-- 1 mfe  mfe   1801002 Sep 29 10:03 macmnsvc_401UBU1604.log
+root@401UBU1604:/var/McAfee/agent/logs# vi masvc_401UBU1604.log
+root@401UBU1604:/var/McAfee/agent/logs# cd /var/log
+root@401UBU1604:/var/log# ls -lrt
+total 7124
+drwx------ 2 speech-dispatcher root    4096 Feb 18  2016 speech-dispatcher
+drwxr-xr-x 2 root              root    4096 Feb 29  2016 upstart
+drwxr-xr-x 2 root              root    4096 Apr 16  2016 dist-upgrade
+drwxr-xr-x 2 root              root    4096 Apr 20  2016 fsck
+-rw-r----- 1 root              adm       31 Apr 20  2016 dmesg
+-rw-r--r-- 1 root              root   57457 Apr 20  2016 bootstrap.log
+drwxr-xr-x 3 root              root    4096 Apr 20  2016 hp
+drwxrwxr-x 2 root              root    4096 Jul 27  2017 installer
+-rw-r----- 1 root              adm      237 Aug  1  2017 apport.log.3.gz
+-rw-r----- 1 root              adm      246 Aug 19  2019 apport.log.2.gz
+-rw-r--r-- 1 root              root    4036 Oct  8  2019 fontconfig.log
+-rw-r--r-- 1 root              root   36980 Nov 13  2019 Xorg.1.log
+-rw-r--r-- 1 root              root     127 May 12  2020 alternatives.log.12.gz
+-rw-r--r-- 1 root              root     127 Jun  9  2020 alternatives.log.11.gz
+-rw-r--r-- 1 root              root     155 Jul 14  2020 alternatives.log.10.gz
+-rw-r--r-- 1 root              root     178 Aug 11  2020 alternatives.log.9.gz
+-rw-r--r-- 1 root              root     204 Sep  8  2020 alternatives.log.8.gz
+-rw-r--r-- 1 root              root     382 Nov 10  2020 alternatives.log.7.gz
+-rw-r--r-- 1 root              root    5364 Nov 11  2020 dpkg.log.12.gz
+-rw-r--r-- 1 root              root    2371 Nov 11  2020 dpkg.log.11.gz
+-rw-r--r-- 1 root              root     127 Dec  8  2020 alternatives.log.6.gz
+-rw-r--r-- 1 root              root    4594 Dec 11  2020 dpkg.log.10.gz
+-rw-r--r-- 1 root              root    3749 Jan 13  2021 dpkg.log.9.gz
+-rw-r--r-- 1 root              root     457 Jan 13  2021 alternatives.log.5.gz
+-rw-r--r-- 1 root              root     126 Feb  9  2021 alternatives.log.4.gz
+-rw-r--r-- 1 root              root    2610 Feb  9  2021 dpkg.log.8.gz
+-rw-r--r-- 1 root              root     217 Mar  9  2021 alternatives.log.3.gz
+-rw-r--r-- 1 root              root    3685 Mar  9  2021 dpkg.log.7.gz
+-rw-r--r-- 1 root              root     127 Apr 13  2021 alternatives.log.2.gz
+-rw-r--r-- 1 root              root    2549 Apr 13  2021 dpkg.log.6.gz
+-rw-r--r-- 1 root              root     242 May 12  2021 alternatives.log.1
+-rw-r--r-- 1 root              root    4891 Jun  8  2021 dpkg.log.5.gz
+-rw-r--r-- 1 root              root     257 Jun  8  2021 dpkg.log.4.gz
+-rw-r--r-- 1 root              root     444 Aug 19  2021 dpkg.log.3.gz
+-rw-r--r-- 1 root              root     556 Sep 22  2021 dpkg.log.2.gz
+-rw------- 1 root              utmp       0 Aug 10 13:55 btmp.1
+-rw-r----- 1 syslog            adm   225419 Aug 24 13:12 kern.log.4.gz
+-rw-r----- 1 syslog            adm     3380 Aug 24 13:17 auth.log.4.gz
+-rw-r----- 1 syslog            adm   231489 Aug 26 12:26 syslog.7.gz
+-rw-r----- 1 syslog            adm   225034 Aug 29 10:31 kern.log.3.gz
+-rw-r----- 1 syslog            adm     3708 Aug 29 10:31 auth.log.3.gz
+-rw-r----- 1 syslog            adm    58763 Aug 29 10:36 syslog.6.gz
+-rw-r--r-- 1 root              root     644 Aug 30 10:24 vmware-network.9.log
+-rw-r--r-- 1 root              root     644 Aug 30 13:56 vmware-network.8.log
+-rw-r----- 1 syslog            adm   144633 Aug 30 14:01 syslog.5.gz
+-rw-r--r-- 1 root              root     644 Aug 31 10:25 vmware-network.7.log
+-rw-r----- 1 syslog            adm    59041 Aug 31 10:30 syslog.4.gz
+-rw-r--r-- 1 root              root     640 Sep  1 10:51 vmware-network.6.log
+-rw-rw-r-- 1 root              utmp   62592 Sep  1 10:51 wtmp.1
+-rw-r----- 1 syslog            adm    56686 Sep  1 10:56 syslog.3.gz
+drwxr-x--- 2 root              adm     4096 Sep  1 10:56 unattended-upgrades
+-rw------- 1 root              utmp       0 Sep  1 10:56 btmp
+-rw-r--r-- 1 root              root     644 Sep 15 11:59 vmware-network.5.log
+-rw-r----- 1 syslog            adm   247411 Sep 15 12:00 kern.log.2.gz
+-rw-r----- 1 syslog            adm     4129 Sep 15 12:04 auth.log.2.gz
+-rw-r----- 1 syslog            adm    59817 Sep 15 12:04 syslog.2.gz
+-rw-r--r-- 1 root              root     644 Sep 15 16:15 vmware-network.4.log
+-rw-r--r-- 1 root              root     644 Sep 16 11:16 vmware-network.3.log
+drwxr-xr-x 2 root              root    4096 Sep 26 07:08 vmware-imc
+-rw-r--r-- 1 root              root     644 Sep 26 07:08 vmware-network.2.log
+-rw-r--r-- 1 root              root   21880 Sep 26 07:08 Xorg.0.log.old
+-rw-r--r-- 1 root              root    1851 Sep 26 07:09 gpu-manager.log
+-rw-r--r-- 1 root              root     877 Sep 26 07:11 dpkg.log.1
+-rw-r--r-- 1 root              root   26772 Sep 26 07:11 Xorg.0.log
+-rw-r----- 1 syslog            adm  1276003 Sep 26 07:12 kern.log.1
+-rw-r----- 1 syslog            adm    58562 Sep 26 07:17 auth.log.1
+drwxr-xr-x 2 root              root    4096 Sep 26 07:17 apt
+-rw-r----- 1 syslog            adm  1590150 Sep 26 07:17 syslog.1
+drwxr-xr-x 2 root              root    4096 Sep 26 07:17 lightdm
+-rw-r--r-- 1 root              root     644 Sep 26 07:28 vmware-network.1.log
+-rw-r--r-- 1 root              root     388 Sep 26 07:33 alternatives.log
+-rw-r--r-- 1 root              root    2052 Sep 26 08:34 mfedx-6.0.3-646-1664195636.log
+-rw-r--r-- 1 root              root 1075336 Sep 26 09:02 vmware-vmsvc.log
+-rw-r--r-- 1 root              root     644 Sep 26 09:02 vmware-network.log
+-rw-r--r-- 1 root              root     774 Sep 26 12:02 MCAFEE_AGENT_UNINSTALL-2022.09.26-12.02.02.log
+-rw-r--r-- 1 root              root    2043 Sep 26 12:02 mfedx-6.0.3-906-1664208155.log
+-rw-r--r-- 1 root              root     774 Sep 26 12:13 MCAFEE_AGENT_UNINSTALL-2022.09.26-12.13.31.log
+-rw-r--r-- 1 root              root    2043 Sep 26 12:14 mfedx-6.0.3-906-1664208845.log
+-rw-r--r-- 1 root              root     774 Sep 26 12:23 MCAFEE_AGENT_UNINSTALL-2022.09.26-12.23.19.log
+-rw-r--r-- 1 root              root    2043 Sep 26 12:24 mfedx-6.0.3-906-1664209433.log
+-rw-r--r-- 1 root              root     774 Sep 26 12:27 MCAFEE_AGENT_UNINSTALL-2022.09.26-12.27.36.log
+-rw-r--r-- 1 root              root     774 Sep 26 12:41 MCAFEE_AGENT_UNINSTALL-2022.09.26-12.41.06.log
+-rw-r--r-- 1 root              root    2043 Sep 26 12:41 mfedx-6.0.3-906-1664210499.log
+-rw-r--r-- 1 root              root     774 Sep 26 12:42 MCAFEE_AGENT_UNINSTALL-2022.09.26-12.42.44.log
+-rw-r--r-- 1 root              root    2043 Sep 26 12:43 mfedx-6.0.3-906-1664210597.log
+-rw-r--r-- 1 root              root     774 Sep 26 12:44 MCAFEE_AGENT_UNINSTALL-2022.09.26-12.44.12.log
+-rw-r--r-- 1 root              root    2136 Sep 26 12:45 mfedx-6.0.3-906-1664210744.log
+-rw-r--r-- 1 root              root     774 Sep 26 12:51 MCAFEE_AGENT_UNINSTALL-2022.09.26-12.50.46.log
+-rw-r--r-- 1 root              root    2043 Sep 26 12:51 mfedx-6.0.3-906-1664211080.log
+-rw-r--r-- 1 root              root     774 Sep 26 12:56 MCAFEE_AGENT_UNINSTALL-2022.09.26-12.56.15.log
+-rw-r--r-- 1 root              root   32032 Sep 26 12:56 faillog
+-rw-r--r-- 1 root              root   34741 Sep 26 12:57 maconfig.log
+-rw-r--r-- 1 root              root    2043 Sep 26 12:57 mfedx-6.0.3-906-1664211431.log
+-rw-r--r-- 1 root              root  133716 Sep 26 12:57 mcupdater_401UBU1604.log
+-rw-r----- 1 root              adm      487 Sep 26 13:00 apport.log.1
+-rw-r--r-- 1 root              root   49262 Sep 26 14:16 dpkg.log
+-rw-r----- 1 syslog            adm   326090 Sep 29 04:26 kern.log
+-rw-r----- 1 root              adm        0 Sep 29 07:35 apport.log
+drwxr-xr-x 2 root              root    4096 Sep 29 07:35 cups
+-rw-r----- 1 syslog            adm   574384 Sep 29 10:01 syslog
+-rw-rw-r-- 1 root              utmp   27264 Sep 29 10:02 wtmp
+-rw-rw-r-- 1 root              utmp  292292 Sep 29 10:02 lastlog
+-rw-r----- 1 syslog            adm   176787 Sep 29 10:03 auth.log
+root@401UBU1604:/var/log# vi syslog
+root@401UBU1604:/var/log# grep -i fault syslog
+Sep 26 07:28:55 401UBU1604 systemd-sysctl[265]: Couldn't write '2' to 'net/ipv6/conf/default/use_tempaddr', ignoring: No such file or directory
+Sep 26 07:28:55 401UBU1604 kernel: [    0.000000] MTRR default type: uncachable
+Sep 26 07:28:55 401UBU1604 kernel: [    0.000111] pid_max: default: 32768 minimum: 301
+Sep 26 07:28:55 401UBU1604 kernel: [    0.306035] NetLabel:  unlabeled traffic allowed by default
+Sep 26 07:28:55 401UBU1604 kernel: [    0.334319] PCI: CLS 32 bytes, default 64
+Sep 26 07:28:55 401UBU1604 kernel: [    0.881381] io scheduler deadline registered (default)
+Sep 26 07:28:55 401UBU1604 speech-dispatcher[779]:  * speech-dispatcher disabled; edit /etc/default/speech-dispatcher
+Sep 26 07:28:56 401UBU1604 NetworkManager[836]: <info>  [1664191736.0926] Read config: /etc/NetworkManager/NetworkManager.conf (etc: default-wifi-powersave-on.conf)
+Sep 26 07:33:07 401UBU1604 systemd[1146]: Reached target Default.
+Sep 26 07:33:07 401UBU1604 systemd[1146]: Stopped target Default.
+Sep 26 07:33:07 401UBU1604 systemd[1218]: Reached target Default.
+Sep 26 07:33:07 401UBU1604 systemd[1218]: Stopped target Default.
+Sep 26 07:33:09 401UBU1604 systemd[1277]: Reached target Default.
+Sep 26 07:33:09 401UBU1604 systemd[1277]: Stopped target Default.
+Sep 26 08:30:05 401UBU1604 systemd[1342]: Reached target Default.
+Sep 26 08:30:06 401UBU1604 systemd[1342]: Stopped target Default.
+Sep 26 08:30:06 401UBU1604 systemd[1394]: Reached target Default.
+Sep 26 08:30:06 401UBU1604 systemd[1394]: Stopped target Default.
+Sep 26 08:30:06 401UBU1604 systemd[1442]: Reached target Default.
+Sep 26 08:30:06 401UBU1604 systemd[1442]: Stopped target Default.
+Sep 26 08:30:07 401UBU1604 systemd[1490]: Reached target Default.
+Sep 26 08:30:07 401UBU1604 systemd[1490]: Stopped target Default.
+Sep 26 08:30:07 401UBU1604 systemd[1537]: Reached target Default.
+Sep 26 08:30:07 401UBU1604 systemd[1537]: Stopped target Default.
+Sep 26 08:30:07 401UBU1604 systemd[1584]: Reached target Default.
+Sep 26 08:30:08 401UBU1604 systemd[1584]: Stopped target Default.
+Sep 26 08:30:08 401UBU1604 systemd[1632]: Reached target Default.
+Sep 26 08:30:08 401UBU1604 systemd[1632]: Stopped target Default.
+Sep 26 08:30:08 401UBU1604 systemd[1680]: Reached target Default.
+Sep 26 08:30:08 401UBU1604 systemd[1680]: Stopped target Default.
+Sep 26 08:30:09 401UBU1604 systemd[1727]: Reached target Default.
+Sep 26 08:30:09 401UBU1604 systemd[1727]: Stopped target Default.
+Sep 26 08:30:10 401UBU1604 systemd[1779]: Reached target Default.
+Sep 26 08:30:11 401UBU1604 systemd[1779]: Stopped target Default.
+Sep 26 08:32:00 401UBU1604 systemd[1827]: Reached target Default.
+Sep 26 08:32:00 401UBU1604 systemd[1827]: Stopped target Default.
+Sep 26 08:32:00 401UBU1604 systemd[1874]: Reached target Default.
+Sep 26 08:32:00 401UBU1604 systemd[1874]: Stopped target Default.
+Sep 26 08:32:02 401UBU1604 systemd[1923]: Reached target Default.
+Sep 26 08:32:02 401UBU1604 systemd[1923]: Stopped target Default.
+Sep 26 08:32:04 401UBU1604 systemd[2098]: Reached target Default.
+Sep 26 08:32:04 401UBU1604 systemd[2098]: Stopped target Default.
+Sep 26 08:32:06 401UBU1604 systemd[2154]: Reached target Default.
+Sep 26 08:32:06 401UBU1604 systemd[2154]: Stopped target Default.
+Sep 26 08:33:28 401UBU1604 systemd[2202]: Reached target Default.
+Sep 26 08:33:28 401UBU1604 systemd[2202]: Stopped target Default.
+Sep 26 08:33:29 401UBU1604 systemd[2274]: Reached target Default.
+Sep 26 08:33:29 401UBU1604 systemd[2274]: Stopped target Default.
+Sep 26 08:33:29 401UBU1604 systemd[2321]: Reached target Default.
+Sep 26 08:33:29 401UBU1604 systemd[2321]: Stopped target Default.
+Sep 26 08:33:31 401UBU1604 systemd[2369]: Reached target Default.
+Sep 26 08:33:31 401UBU1604 systemd[2369]: Stopped target Default.
+Sep 26 08:35:04 401UBU1604 systemd[4264]: Reached target Default.
+Sep 26 08:35:04 401UBU1604 systemd[4264]: Stopped target Default.
+Sep 26 08:35:06 401UBU1604 systemd[4314]: Reached target Default.
+Sep 26 08:35:06 401UBU1604 systemd[4314]: Stopped target Default.
+Sep 26 08:50:53 401UBU1604 systemd[4375]: Reached target Default.
+Sep 26 08:50:53 401UBU1604 systemd[4375]: Stopped target Default.
+Sep 26 08:50:55 401UBU1604 systemd[4429]: Reached target Default.
+Sep 26 08:50:55 401UBU1604 systemd[4429]: Stopped target Default.
+Sep 26 08:52:52 401UBU1604 systemd[4478]: Reached target Default.
+Sep 26 08:52:53 401UBU1604 systemd[4478]: Stopped target Default.
+Sep 26 08:53:15 401UBU1604 systemd[4528]: Reached target Default.
+Sep 26 08:53:15 401UBU1604 systemd[4528]: Stopped target Default.
+Sep 26 09:02:09 401UBU1604 kernel: [    0.000000] MTRR default type: uncachable
+Sep 26 09:02:09 401UBU1604 kernel: [    0.000084] pid_max: default: 32768 minimum: 301
+Sep 26 09:02:09 401UBU1604 systemd-sysctl[259]: Couldn't write '2' to 'net/ipv6/conf/default/use_tempaddr', ignoring: No such file or directory
+Sep 26 09:02:09 401UBU1604 kernel: [    0.270008] NetLabel:  unlabeled traffic allowed by default
+Sep 26 09:02:09 401UBU1604 kernel: [    0.298088] PCI: CLS 32 bytes, default 64
+Sep 26 09:02:09 401UBU1604 kernel: [    0.831436] io scheduler deadline registered (default)
+Sep 26 09:02:10 401UBU1604 NetworkManager[836]: <info>  [1664197330.2364] Read config: /etc/NetworkManager/NetworkManager.conf (etc: default-wifi-powersave-on.conf)
+Sep 26 09:02:10 401UBU1604 speech-dispatcher[839]:  * speech-dispatcher disabled; edit /etc/default/speech-dispatcher
+Sep 26 11:58:38 401UBU1604 systemd[1349]: Reached target Default.
+Sep 26 12:01:16 401UBU1604 systemd[1349]: Stopped target Default.
+Sep 26 12:01:17 401UBU1604 systemd[1885]: Reached target Default.
+Sep 26 14:17:02 401UBU1604 ensltp-epo-setup: Schedule for Default DAT and Engine update task was successfully added
+root@401UBU1604:/var/log#
+root@401UBU1604:/var/log#
+root@401UBU1604:/var/log# grep -i masvc  syslog
+root@401UBU1604:/var/log# ls -lrt
+total 7124
+drwx------ 2 speech-dispatcher root    4096 Feb 18  2016 speech-dispatcher
+drwxr-xr-x 2 root              root    4096 Feb 29  2016 upstart
+drwxr-xr-x 2 root              root    4096 Apr 16  2016 dist-upgrade
+drwxr-xr-x 2 root              root    4096 Apr 20  2016 fsck
+-rw-r----- 1 root              adm       31 Apr 20  2016 dmesg
+-rw-r--r-- 1 root              root   57457 Apr 20  2016 bootstrap.log
+drwxr-xr-x 3 root              root    4096 Apr 20  2016 hp
+drwxrwxr-x 2 root              root    4096 Jul 27  2017 installer
+-rw-r----- 1 root              adm      237 Aug  1  2017 apport.log.3.gz
+-rw-r----- 1 root              adm      246 Aug 19  2019 apport.log.2.gz
+-rw-r--r-- 1 root              root    4036 Oct  8  2019 fontconfig.log
+-rw-r--r-- 1 root              root   36980 Nov 13  2019 Xorg.1.log
+-rw-r--r-- 1 root              root     127 May 12  2020 alternatives.log.12.gz
+-rw-r--r-- 1 root              root     127 Jun  9  2020 alternatives.log.11.gz
+-rw-r--r-- 1 root              root     155 Jul 14  2020 alternatives.log.10.gz
+-rw-r--r-- 1 root              root     178 Aug 11  2020 alternatives.log.9.gz
+-rw-r--r-- 1 root              root     204 Sep  8  2020 alternatives.log.8.gz
+-rw-r--r-- 1 root              root     382 Nov 10  2020 alternatives.log.7.gz
+-rw-r--r-- 1 root              root    5364 Nov 11  2020 dpkg.log.12.gz
+-rw-r--r-- 1 root              root    2371 Nov 11  2020 dpkg.log.11.gz
+-rw-r--r-- 1 root              root     127 Dec  8  2020 alternatives.log.6.gz
+-rw-r--r-- 1 root              root    4594 Dec 11  2020 dpkg.log.10.gz
+-rw-r--r-- 1 root              root    3749 Jan 13  2021 dpkg.log.9.gz
+-rw-r--r-- 1 root              root     457 Jan 13  2021 alternatives.log.5.gz
+-rw-r--r-- 1 root              root     126 Feb  9  2021 alternatives.log.4.gz
+-rw-r--r-- 1 root              root    2610 Feb  9  2021 dpkg.log.8.gz
+-rw-r--r-- 1 root              root     217 Mar  9  2021 alternatives.log.3.gz
+-rw-r--r-- 1 root              root    3685 Mar  9  2021 dpkg.log.7.gz
+-rw-r--r-- 1 root              root     127 Apr 13  2021 alternatives.log.2.gz
+-rw-r--r-- 1 root              root    2549 Apr 13  2021 dpkg.log.6.gz
+-rw-r--r-- 1 root              root     242 May 12  2021 alternatives.log.1
+-rw-r--r-- 1 root              root    4891 Jun  8  2021 dpkg.log.5.gz
+-rw-r--r-- 1 root              root     257 Jun  8  2021 dpkg.log.4.gz
+-rw-r--r-- 1 root              root     444 Aug 19  2021 dpkg.log.3.gz
+-rw-r--r-- 1 root              root     556 Sep 22  2021 dpkg.log.2.gz
+-rw------- 1 root              utmp       0 Aug 10 13:55 btmp.1
+-rw-r----- 1 syslog            adm   225419 Aug 24 13:12 kern.log.4.gz
+-rw-r----- 1 syslog            adm     3380 Aug 24 13:17 auth.log.4.gz
+-rw-r----- 1 syslog            adm   231489 Aug 26 12:26 syslog.7.gz
+-rw-r----- 1 syslog            adm   225034 Aug 29 10:31 kern.log.3.gz
+-rw-r----- 1 syslog            adm     3708 Aug 29 10:31 auth.log.3.gz
+-rw-r----- 1 syslog            adm    58763 Aug 29 10:36 syslog.6.gz
+-rw-r--r-- 1 root              root     644 Aug 30 10:24 vmware-network.9.log
+-rw-r--r-- 1 root              root     644 Aug 30 13:56 vmware-network.8.log
+-rw-r----- 1 syslog            adm   144633 Aug 30 14:01 syslog.5.gz
+-rw-r--r-- 1 root              root     644 Aug 31 10:25 vmware-network.7.log
+-rw-r----- 1 syslog            adm    59041 Aug 31 10:30 syslog.4.gz
+-rw-r--r-- 1 root              root     640 Sep  1 10:51 vmware-network.6.log
+-rw-rw-r-- 1 root              utmp   62592 Sep  1 10:51 wtmp.1
+-rw-r----- 1 syslog            adm    56686 Sep  1 10:56 syslog.3.gz
+drwxr-x--- 2 root              adm     4096 Sep  1 10:56 unattended-upgrades
+-rw------- 1 root              utmp       0 Sep  1 10:56 btmp
+-rw-r--r-- 1 root              root     644 Sep 15 11:59 vmware-network.5.log
+-rw-r----- 1 syslog            adm   247411 Sep 15 12:00 kern.log.2.gz
+-rw-r----- 1 syslog            adm     4129 Sep 15 12:04 auth.log.2.gz
+-rw-r----- 1 syslog            adm    59817 Sep 15 12:04 syslog.2.gz
+-rw-r--r-- 1 root              root     644 Sep 15 16:15 vmware-network.4.log
+-rw-r--r-- 1 root              root     644 Sep 16 11:16 vmware-network.3.log
+drwxr-xr-x 2 root              root    4096 Sep 26 07:08 vmware-imc
+-rw-r--r-- 1 root              root     644 Sep 26 07:08 vmware-network.2.log
+-rw-r--r-- 1 root              root   21880 Sep 26 07:08 Xorg.0.log.old
+-rw-r--r-- 1 root              root    1851 Sep 26 07:09 gpu-manager.log
+-rw-r--r-- 1 root              root     877 Sep 26 07:11 dpkg.log.1
+-rw-r--r-- 1 root              root   26772 Sep 26 07:11 Xorg.0.log
+-rw-r----- 1 syslog            adm  1276003 Sep 26 07:12 kern.log.1
+-rw-r----- 1 syslog            adm    58562 Sep 26 07:17 auth.log.1
+drwxr-xr-x 2 root              root    4096 Sep 26 07:17 apt
+-rw-r----- 1 syslog            adm  1590150 Sep 26 07:17 syslog.1
+drwxr-xr-x 2 root              root    4096 Sep 26 07:17 lightdm
+-rw-r--r-- 1 root              root     644 Sep 26 07:28 vmware-network.1.log
+-rw-r--r-- 1 root              root     388 Sep 26 07:33 alternatives.log
+-rw-r--r-- 1 root              root    2052 Sep 26 08:34 mfedx-6.0.3-646-1664195636.log
+-rw-r--r-- 1 root              root 1075336 Sep 26 09:02 vmware-vmsvc.log
+-rw-r--r-- 1 root              root     644 Sep 26 09:02 vmware-network.log
+-rw-r--r-- 1 root              root     774 Sep 26 12:02 MCAFEE_AGENT_UNINSTALL-2022.09.26-12.02.02.log
+-rw-r--r-- 1 root              root    2043 Sep 26 12:02 mfedx-6.0.3-906-1664208155.log
+-rw-r--r-- 1 root              root     774 Sep 26 12:13 MCAFEE_AGENT_UNINSTALL-2022.09.26-12.13.31.log
+-rw-r--r-- 1 root              root    2043 Sep 26 12:14 mfedx-6.0.3-906-1664208845.log
+-rw-r--r-- 1 root              root     774 Sep 26 12:23 MCAFEE_AGENT_UNINSTALL-2022.09.26-12.23.19.log
+-rw-r--r-- 1 root              root    2043 Sep 26 12:24 mfedx-6.0.3-906-1664209433.log
+-rw-r--r-- 1 root              root     774 Sep 26 12:27 MCAFEE_AGENT_UNINSTALL-2022.09.26-12.27.36.log
+-rw-r--r-- 1 root              root     774 Sep 26 12:41 MCAFEE_AGENT_UNINSTALL-2022.09.26-12.41.06.log
+-rw-r--r-- 1 root              root    2043 Sep 26 12:41 mfedx-6.0.3-906-1664210499.log
+-rw-r--r-- 1 root              root     774 Sep 26 12:42 MCAFEE_AGENT_UNINSTALL-2022.09.26-12.42.44.log
+-rw-r--r-- 1 root              root    2043 Sep 26 12:43 mfedx-6.0.3-906-1664210597.log
+-rw-r--r-- 1 root              root     774 Sep 26 12:44 MCAFEE_AGENT_UNINSTALL-2022.09.26-12.44.12.log
+-rw-r--r-- 1 root              root    2136 Sep 26 12:45 mfedx-6.0.3-906-1664210744.log
+-rw-r--r-- 1 root              root     774 Sep 26 12:51 MCAFEE_AGENT_UNINSTALL-2022.09.26-12.50.46.log
+-rw-r--r-- 1 root              root    2043 Sep 26 12:51 mfedx-6.0.3-906-1664211080.log
+-rw-r--r-- 1 root              root     774 Sep 26 12:56 MCAFEE_AGENT_UNINSTALL-2022.09.26-12.56.15.log
+-rw-r--r-- 1 root              root   32032 Sep 26 12:56 faillog
+-rw-r--r-- 1 root              root   34741 Sep 26 12:57 maconfig.log
+-rw-r--r-- 1 root              root    2043 Sep 26 12:57 mfedx-6.0.3-906-1664211431.log
+-rw-r--r-- 1 root              root  133716 Sep 26 12:57 mcupdater_401UBU1604.log
+-rw-r----- 1 root              adm      487 Sep 26 13:00 apport.log.1
+-rw-r--r-- 1 root              root   49262 Sep 26 14:16 dpkg.log
+-rw-r----- 1 syslog            adm   326090 Sep 29 04:26 kern.log
+-rw-r----- 1 root              adm        0 Sep 29 07:35 apport.log
+drwxr-xr-x 2 root              root    4096 Sep 29 07:35 cups
+-rw-r----- 1 syslog            adm   574384 Sep 29 10:01 syslog
+-rw-rw-r-- 1 root              utmp   27264 Sep 29 10:02 wtmp
+-rw-rw-r-- 1 root              utmp  292292 Sep 29 10:02 lastlog
+-rw-r----- 1 syslog            adm   176787 Sep 29 10:03 auth.log
+root@401UBU1604:/var/log# grep -i abrt syslog
+root@401UBU1604:/var/log# vi syslog
+root@401UBU1604:/var/log#
+root@401UBU1604:/var/log# ls
+alternatives.log        auth.log        dpkg.log.4.gz    lightdm                                         mfedx-6.0.3-906-1664210744.log  vmware-network.4.log
+alternatives.log.1      auth.log.1      dpkg.log.5.gz    maconfig.log                                    mfedx-6.0.3-906-1664211080.log  vmware-network.5.log
+alternatives.log.10.gz  auth.log.2.gz   dpkg.log.6.gz    MCAFEE_AGENT_UNINSTALL-2022.09.26-12.02.02.log  mfedx-6.0.3-906-1664211431.log  vmware-network.6.log
+alternatives.log.11.gz  auth.log.3.gz   dpkg.log.7.gz    MCAFEE_AGENT_UNINSTALL-2022.09.26-12.13.31.log  speech-dispatcher               vmware-network.7.log
+alternatives.log.12.gz  auth.log.4.gz   dpkg.log.8.gz    MCAFEE_AGENT_UNINSTALL-2022.09.26-12.23.19.log  syslog                          vmware-network.8.log
+alternatives.log.2.gz   bootstrap.log   dpkg.log.9.gz    MCAFEE_AGENT_UNINSTALL-2022.09.26-12.27.36.log  syslog.1                        vmware-network.9.log
+alternatives.log.3.gz   btmp            faillog          MCAFEE_AGENT_UNINSTALL-2022.09.26-12.41.06.log  syslog.2.gz                     vmware-network.log
+alternatives.log.4.gz   btmp.1          fontconfig.log   MCAFEE_AGENT_UNINSTALL-2022.09.26-12.42.44.log  syslog.3.gz                     vmware-vmsvc.log
+alternatives.log.5.gz   cups            fsck             MCAFEE_AGENT_UNINSTALL-2022.09.26-12.44.12.log  syslog.4.gz                     wtmp
+alternatives.log.6.gz   dist-upgrade    gpu-manager.log  MCAFEE_AGENT_UNINSTALL-2022.09.26-12.50.46.log  syslog.5.gz                     wtmp.1
+alternatives.log.7.gz   dmesg           hp               MCAFEE_AGENT_UNINSTALL-2022.09.26-12.56.15.log  syslog.6.gz                     Xorg.0.log
+alternatives.log.8.gz   dpkg.log        installer        mcupdater_401UBU1604.log                        syslog.7.gz                     Xorg.0.log.old
+alternatives.log.9.gz   dpkg.log.1      kern.log         mfedx-6.0.3-646-1664195636.log                  unattended-upgrades             Xorg.1.log
+apport.log              dpkg.log.10.gz  kern.log.1       mfedx-6.0.3-906-1664208155.log                  upstart
+apport.log.1            dpkg.log.11.gz  kern.log.2.gz    mfedx-6.0.3-906-1664208845.log                  vmware-imc
+apport.log.2.gz         dpkg.log.12.gz  kern.log.3.gz    mfedx-6.0.3-906-1664209433.log                  vmware-network.1.log
+apport.log.3.gz         dpkg.log.2.gz   kern.log.4.gz    mfedx-6.0.3-906-1664210499.log                  vmware-network.2.log
+apt                     dpkg.log.3.gz   lastlog          mfedx-6.0.3-906-1664210597.log                  vmware-network.3.log
+root@401UBU1604:/var/log# /etc/init.d status
+-bash: /etc/init.d: Is a directory
+root@401UBU1604:/var/log# /etc/init.d/ma status
+Failed to get unit file state for mcafee.ma.service: Connection timed out
+
+Trellix agent service is already running.
+Trellix common services is already running.
+Trellix compat service is already running.
+
+root@401UBU1604:/var/log# systemctl status mcafee.ma.service
+Failed to get properties: Connection timed out
+root@401UBU1604:/var/log# ps -eaf | grep -i mue
+root      1536  1468  0 10:16 pts/0    00:00:00 grep --color=auto -i mue
+root     31958 28478  0 Sep26 ?        00:00:08 /opt/McAfee/agent/bin/Mue_InUse -script /var/McAfee/agent/update/UpdateMain.McS -id 1075838924 -localeid 0409 -logfile /var/McAfee/agent/logs/McScript.log -parent FRAMEWORK -initiator 1 -installdir /opt/McAfee/agent//lib -taskid MA_RunNow_39_{2d1947d2-3dc8-11ed-0d69-bb44aa493797}
+root     31964 31958  0 Sep26 ?        00:00:03 /opt/McAfee/agent/bin/Mue_InUse -script /var/McAfee/agent/update/UpdateMain.McS -id 1075838924 -localeid 0409 -logfile /var/McAfee/agent/logs/McScript.log -parent FRAMEWORK -initiator 1 -installdir /opt/McAfee/agent//lib -taskid MA_RunNow_39_{2d1947d2-3dc8-11ed-0d69-bb44aa493797}
+root     31965 31964  0 Sep26 ?        00:00:00 /opt/McAfee/agent/bin/Mue_InUse -script /var/McAfee/agent/update/UpdateMain.McS -id 1075838924 -localeid 0409 -logfile /var/McAfee/agent/logs/McScript.log -parent FRAMEWORK -initiator 1 -installdir /opt/McAfee/agent//lib -taskid MA_RunNow_39_{2d1947d2-3dc8-11ed-0d69-bb44aa493797}
+root     31966 31964  0 Sep26 ?        00:00:00 /opt/McAfee/agent/bin/Mue_InUse -script /var/McAfee/agent/update/UpdateMain.McS -id 1075838924 -localeid 0409 -logfile /var/McAfee/agent/logs/McScript.log -parent FRAMEWORK -initiator 1 -installdir /opt/McAfee/agent//lib -taskid MA_RunNow_39_{2d1947d2-3dc8-11ed-0d69-bb44aa493797}
+root     31967 31964  0 Sep26 ?        00:00:00 /opt/McAfee/agent/bin/Mue_InUse -script /var/McAfee/agent/update/UpdateMain.McS -id 1075838924 -localeid 0409 -logfile /var/McAfee/agent/logs/McScript.log -parent FRAMEWORK -initiator 1 -installdir /opt/McAfee/agent//lib -taskid MA_RunNow_39_{2d1947d2-3dc8-11ed-0d69-bb44aa493797}
+root     31968 31964  0 Sep26 ?        00:00:00 /opt/McAfee/agent/bin/Mue_InUse -script /var/McAfee/agent/update/UpdateMain.McS -id 1075838924 -localeid 0409 -logfile /var/McAfee/agent/logs/McScript.log -parent FRAMEWORK -initiator 1 -installdir /opt/McAfee/agent//lib -taskid MA_RunNow_39_{2d1947d2-3dc8-11ed-0d69-bb44aa493797}
+root     31969 31964  0 Sep26 ?        00:00:00 /opt/McAfee/agent/bin/Mue_InUse -script /var/McAfee/agent/update/UpdateMain.McS -id 1075838924 -localeid 0409 -logfile /var/McAfee/agent/logs/McScript.log -parent FRAMEWORK -initiator 1 -installdir /opt/McAfee/agent//lib -taskid MA_RunNow_39_{2d1947d2-3dc8-11ed-0d69-bb44aa493797}
+root     31970 31964  0 Sep26 ?        00:00:00 /opt/McAfee/agent/bin/Mue_InUse -script /var/McAfee/agent/update/UpdateMain.McS -id 1075838924 -localeid 0409 -logfile /var/McAfee/agent/logs/McScript.log -parent FRAMEWORK -initiator 1 -installdir /opt/McAfee/agent//lib -taskid MA_RunNow_39_{2d1947d2-3dc8-11ed-0d69-bb44aa493797}
+root     31971 31964  0 Sep26 ?        00:00:00 /opt/McAfee/agent/bin/Mue_InUse -script /var/McAfee/agent/update/UpdateMain.McS -id 1075838924 -localeid 0409 -logfile /var/McAfee/agent/logs/McScript.log -parent FRAMEWORK -initiator 1 -installdir /opt/McAfee/agent//lib -taskid MA_RunNow_39_{2d1947d2-3dc8-11ed-0d69-bb44aa493797}
+root     32110 28478  0 Sep26 ?        00:00:00 sh -c ps -ax | grep /opt/McAfee/agent/bin/Mue_InUse |grep -v grep
+root@401UBU1604:/var/log# gcore
+usage:  gcore [-o filename] pid
+root@401UBU1604:/var/log# ps -eaf  | grep
+Usage: grep [OPTION]... PATTERN [FILE]...
+Try 'grep --help' for more information.
+root@401UBU1604:/var/log# ps -eaf  | grep ma
+root        36     2  0 Sep26 ?        00:00:00 [fsnotify_mark]
+root        54     2  0 Sep26 ?        00:00:00 [acpi_thermal_pm]
+root        86     2  0 Sep26 ?        00:00:00 [charger_manager]
+root      1544  1468  0 10:19 pts/0    00:00:00 grep --color=auto ma
+root     28478     1  0 Sep26 ?        00:00:07 /opt/McAfee/agent/bin/masvc self_start
+mfe      28506     1  0 Sep26 ?        00:02:37 /opt/McAfee/agent/bin/macmnsvc self_start
+root     28513     1  0 Sep26 ?        00:00:00 /opt/McAfee/agent/bin/macompatsvc self_start
+root     28543 28513  0 Sep26 ?        00:00:03 /opt/McAfee/agent/bin/macompatsvc self_start
+root     28544 28543  0 Sep26 ?        00:00:03 /opt/McAfee/agent/bin/macompatsvc self_start
+root     28545 28543  0 Sep26 ?        00:00:09 /opt/McAfee/agent/bin/macompatsvc self_start
+root     28550 28543  0 Sep26 ?        00:00:00 /opt/McAfee/agent/bin/macompatsvc self_start
+root     28551 28543  0 Sep26 ?        00:00:00 /opt/McAfee/agent/bin/macompatsvc self_start
+root     28552 28543  0 Sep26 ?        00:00:00 /opt/McAfee/agent/bin/macompatsvc self_start
+root     28553 28543  0 Sep26 ?        00:00:00 /opt/McAfee/agent/bin/macompatsvc self_start
+root@401UBU1604:/var/log# gcore -o /tmp/masvc_crash 28478
+[New LWP 28483]
+[New LWP 28484]
+[New LWP 28485]
+[New LWP 28486]
+[New LWP 28487]
+[New LWP 28488]
+[New LWP 28490]
+[New LWP 28491]
+[New LWP 28492]
+[New LWP 28494]
+[New LWP 28495]
+[New LWP 28496]
+[New LWP 28497]
+[New LWP 28499]
+[New LWP 28500]
+[New LWP 28501]
+[New LWP 28671]
+[New LWP 28672]
+[New LWP 28673]
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+0x00007f74ee9c537d in read () at ../sysdeps/unix/syscall-template.S:84
+84      ../sysdeps/unix/syscall-template.S: No such file or directory.
+warning: target file /proc/28478/cmdline contained unexpected null characters
+Segmentation fault
+root@401UBU1604:/var/log# ps -eaf |  grep ma
+root        36     2  0 Sep26 ?        00:00:00 [fsnotify_mark]
+root        54     2  0 Sep26 ?        00:00:00 [acpi_thermal_pm]
+root        86     2  0 Sep26 ?        00:00:00 [charger_manager]
+root      1553  1468  0 10:20 pts/0    00:00:00 grep --color=auto ma
+root     28478     1  0 Sep26 ?        00:00:07 /opt/McAfee/agent/bin/masvc self_start
+mfe      28506     1  0 Sep26 ?        00:02:37 /opt/McAfee/agent/bin/macmnsvc self_start
+root     28513     1  0 Sep26 ?        00:00:00 /opt/McAfee/agent/bin/macompatsvc self_start
+root     28543 28513  0 Sep26 ?        00:00:03 /opt/McAfee/agent/bin/macompatsvc self_start
+root     28544 28543  0 Sep26 ?        00:00:03 /opt/McAfee/agent/bin/macompatsvc self_start
+root     28545 28543  0 Sep26 ?        00:00:09 /opt/McAfee/agent/bin/macompatsvc self_start
+root     28550 28543  0 Sep26 ?        00:00:00 /opt/McAfee/agent/bin/macompatsvc self_start
+root     28551 28543  0 Sep26 ?        00:00:00 /opt/McAfee/agent/bin/macompatsvc self_start
+root     28552 28543  0 Sep26 ?        00:00:00 /opt/McAfee/agent/bin/macompatsvc self_start
+root     28553 28543  0 Sep26 ?        00:00:00 /opt/McAfee/agent/bin/macompatsvc self_start
+root@401UBU1604:/var/log# cd /tmp
+root@401UBU1604:/tmp# ls
+ensltp-epo-setup.log             masvc_crash.28478       rpm_install.spec
+MAProvision-5.7.8-120-buildroot  McAfeeSmartInstall.log  systemd-private-5378ed78f2284b5d9361136e4b2ec322-systemd-timesyncd.service-bneS68
+ma_rpm_spec_prov                 NRA                     vmware-root
+root@401UBU1604:/tmp#  ls -lrt
+total 10112
+drwx------ 3 root root     4096 Sep 26 09:02 systemd-private-5378ed78f2284b5d9361136e4b2ec322-systemd-timesyncd.service-bneS68
+drwx------ 2 root root     4096 Sep 26 09:02 vmware-root
+drwxr-xr-x 2 root root     4096 Sep 26 09:02 NRA
+-rw-r--r-- 1 root root     2538 Sep 26 12:28 rpm_install.spec
+drwxr-xr-x 3 root root     4096 Sep 26 12:28 MAProvision-5.7.8-120-buildroot
+-rw-r--r-- 1 root root     2992 Sep 26 12:28 ma_rpm_spec_prov
+-rw-r--r-- 1 root root    14798 Sep 26 12:46 McAfeeSmartInstall.log
+-rw------- 1 root root     6024 Sep 26 14:17 ensltp-epo-setup.log
+-rw-r--r-- 1 root root 10344768 Sep 29 10:20 masvc_crash.28478
+root@401UBU1604:/tmp# gdb /opt/McAfee/agent/bin/masvc masvc_crash.28478
+GNU gdb (Ubuntu 7.11.1-0ubuntu1~16.5) 7.11.1
+Copyright (C) 2016 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from /opt/McAfee/agent/bin/masvc...(no debugging symbols found)...done.
+"/tmp/masvc_crash.28478" is not a core dump: File format not recognized
+(gdb) q
+root@401UBU1604:/tmp# file masvc_crash.28478
+masvc_crash.28478: data
+root@401UBU1604:/tmp# vi masvc_crash.28478
+root@401UBU1604:/tmp# objdump -a masvc_crash.28478
+objdump: masvc_crash.28478: File format not recognized
+root@401UBU1604:/tmp# strace -p 28478
+strace: Process 28478 attached
+read(49,
+^Cstrace: Process 28478 detached
+ <detached ...>
+root@401UBU1604:/tmp# gstack 28478 >test1.log
+No command 'gstack' found, did you mean:
+ Command 'stack' from package 'haskell-stack' (universe)
+ Command 'mstack' from package 'umview' (universe)
+ Command 'pstack' from package 'pstack' (universe)
+ Command 'jstack' from package 'openjdk-8-jdk-headless' (main)
+ Command 'jstack' from package 'openjdk-9-jdk-headless' (universe)
+gstack: command not found
+root@401UBU1604:/tmp# ls -lrt
+total 10112
+drwx------ 3 root root     4096 Sep 26 09:02 systemd-private-5378ed78f2284b5d9361136e4b2ec322-systemd-timesyncd.service-bneS68
+drwx------ 2 root root     4096 Sep 26 09:02 vmware-root
+drwxr-xr-x 2 root root     4096 Sep 26 09:02 NRA
+-rw-r--r-- 1 root root     2538 Sep 26 12:28 rpm_install.spec
+drwxr-xr-x 3 root root     4096 Sep 26 12:28 MAProvision-5.7.8-120-buildroot
+-rw-r--r-- 1 root root     2992 Sep 26 12:28 ma_rpm_spec_prov
+-rw-r--r-- 1 root root    14798 Sep 26 12:46 McAfeeSmartInstall.log
+-rw------- 1 root root     6024 Sep 26 14:17 ensltp-epo-setup.log
+-rw-r--r-- 1 root root 10344768 Sep 29 10:20 masvc_crash.28478
+-rw-r--r-- 1 root root        0 Sep 29 10:27 test1.log
+root@401UBU1604:/tmp# gdb --pid=28478
+GNU gdb (Ubuntu 7.11.1-0ubuntu1~16.5) 7.11.1
+Copyright (C) 2016 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word".
+Attaching to process 28478
+[New LWP 28483]
+[New LWP 28484]
+[New LWP 28485]
+[New LWP 28486]
+[New LWP 28487]
+[New LWP 28488]
+[New LWP 28490]
+[New LWP 28491]
+[New LWP 28492]
+[New LWP 28494]
+[New LWP 28495]
+[New LWP 28496]
+[New LWP 28497]
+[New LWP 28499]
+[New LWP 28500]
+[New LWP 28501]
+[New LWP 28671]
+[New LWP 28672]
+[New LWP 28673]
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+0x00007f74ee9c537d in read () at ../sysdeps/unix/syscall-template.S:84
+84      ../sysdeps/unix/syscall-template.S: No such file or directory.
+(gdb) gcore
+warning: target file /proc/28478/cmdline contained unexpected null characters
+Segmentation fault
+root@401UBU1604:/tmp# ls -lrt
+total 20176
+drwx------ 3 root root     4096 Sep 26 09:02 systemd-private-5378ed78f2284b5d9361136e4b2ec322-systemd-timesyncd.service-bneS68
+drwx------ 2 root root     4096 Sep 26 09:02 vmware-root
+drwxr-xr-x 2 root root     4096 Sep 26 09:02 NRA
+-rw-r--r-- 1 root root     2538 Sep 26 12:28 rpm_install.spec
+drwxr-xr-x 3 root root     4096 Sep 26 12:28 MAProvision-5.7.8-120-buildroot
+-rw-r--r-- 1 root root     2992 Sep 26 12:28 ma_rpm_spec_prov
+-rw-r--r-- 1 root root    14798 Sep 26 12:46 McAfeeSmartInstall.log
+-rw------- 1 root root     6024 Sep 26 14:17 ensltp-epo-setup.log
+-rw-r--r-- 1 root root 10344768 Sep 29 10:20 masvc_crash.28478
+-rw-r--r-- 1 root root        0 Sep 29 10:27 test1.log
+-rw-r--r-- 1 root root 10344768 Sep 29 10:29 core.28478
+root@401UBU1604:/tmp# file core.28478
+core.28478: data
+root@401UBU1604:/tmp# cd /var/McAfee/agent/logs
+root@401UBU1604:/var/McAfee/agent/logs# ls -lrt
+total 138236
+-rw-r--r-- 1 root root  2097154 Sep 26 14:08 masvc_401UBU1604_backup_1.log
+-rw-r--r-- 1 root root     3162 Sep 26 14:08 mapolicy_401UBU1604.log
+-rw-r--r-- 1 root root  1390164 Sep 26 14:17 McScript_deploy.log
+-rw-r--r-- 1 root root 12323741 Sep 26 14:42 masvc_401UBU1604.log
+-rw-r--r-- 1 mfe  mfe  20971543 Sep 28 19:30 macmnsvc_401UBU1604_backup_5.log
+-rw-r--r-- 1 mfe  mfe  20971588 Sep 28 23:11 macmnsvc_401UBU1604_backup_4.log
+-rw-r--r-- 1 mfe  mfe  20971616 Sep 29 02:49 macmnsvc_401UBU1604_backup_3.log
+-rw-r--r-- 1 mfe  mfe  20971560 Sep 29 06:06 macmnsvc_401UBU1604_backup_2.log
+-rw-r--r-- 1 root root  1073911 Sep 29 08:21 macompatsvc_401UBU1604.log
+-rw-r--r-- 1 mfe  mfe  20971570 Sep 29 09:38 macmnsvc_401UBU1604_backup_1.log
+-rw-r--r-- 1 root root 15975096 Sep 29 10:22 McScript.log
+-rw-r--r-- 1 mfe  mfe   3780408 Sep 29 10:30 macmnsvc_401UBU1604.log
+root@401UBU1604:/var/McAfee/agent/logs# vi masvc_401UBU1604.log
+root@401UBU1604:/var/McAfee/agent/logs#
