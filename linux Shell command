@@ -1,9 +1,14 @@
 #!/bin/sh
 usage()
 {
-    echo "Usage: $command [-u version  ]"
+    echo "Usage: $command [-i|-u|-b|-p|-r|-R|-h  ]"
+    echo "-i : fresh install "
     echo "-u : upgrade install"
-    echo "version :5.7.8.112"
+    echo "-b :Upgrade Agent only , no server info will be updated"
+    echo "-p : generate provisioning rpm/deb"
+    echo "-r : Use this option while installing/upgrading, to run macmnsvc as root user"
+	echo "-R : Set Relay Server ('IP1:Port1[;IP2:Port2;...]')"
+	echo "-d : install directory"
     echo "-h : show this help"
 }
 if [ $# -eq 0 ]; then 
@@ -11,16 +16,27 @@ if [ $# -eq 0 ]; then
     exit 1
 fi
 
-while getopts u:a opt
-  do    case "$opt" in
-      u)  msgbus_current_version="$OPTARG";;
+while getopts ircd:ubh:g:t:o:pR:f opt
+  do	case "$opt" in
+      i)  install="yes";;
+      c)  cloud="$OPTARG";;
+      u)  upgrade="yes";;
+      b) upgrade="yes"
+         upgradeagentonly="yes";;
+      g)  guid="$OPTARG";;
+      t) tenantid="$OPTARG";;
+      p) Provision="yes";;
+      r)  macmnsvcroot="yes";;
+      o) bitforce="$OPTARG";;
+	  R) Relay="$OPTARG";;
+	  f)  force="yes";;
+	  d) install_dir="$OPTARG";;
       h)  usage
-      exit 0;;
-      [?])    usage
+	  exit 0;;
+      [?])	usage
       exit 1;;
-  esac
 done
-echo "new msgus version updating = $msgbus_current_version"
+echo "*******install_dir = ($install_dir)"
   
   
   
