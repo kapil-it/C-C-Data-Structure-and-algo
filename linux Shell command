@@ -28,11 +28,11 @@ while getopts ircd:ubh:g:t:o:pR:f opt
       p) Provision="yes";;
       r)  macmnsvcroot="yes";;
       o) bitforce="$OPTARG";;
-	  R) Relay="$OPTARG";;
-	  f)  force="yes";;
-	  d) install_dir="$OPTARG";;
+      R) Relay="$OPTARG";;
+      f)  force="yes";;
+      d) install_dir="$OPTARG";;
       h)  usage
-	  exit 0;;
+      exit 0;;
       [?])	usage
       exit 1;;
 done
