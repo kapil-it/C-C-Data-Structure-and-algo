@@ -7,8 +7,8 @@ usage()
     echo "-b :Upgrade Agent only , no server info will be updated"
     echo "-p : generate provisioning rpm/deb"
     echo "-r : Use this option while installing/upgrading, to run macmnsvc as root user"
-	echo "-R : Set Relay Server ('IP1:Port1[;IP2:Port2;...]')"
-	echo "-d : install directory"
+    echo "-R : Set Relay Server ('IP1:Port1[;IP2:Port2;...]')"
+    echo "-d : install directory"
     echo "-h : show this help"
 }
 if [ $# -eq 0 ]; then 
