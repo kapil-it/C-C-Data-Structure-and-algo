@@ -1,0 +1,45 @@
+Jonathon commant- 
+Im prolly late again, but want to chime in on notes I took some time back when I tried this on my lab and disabling self protection
+
+Once the customer installs the debug tools, open a command prompt as admin and perform the following:
+               >cd C:\Program Files (x86)\Windows Kits\10\Debuggers\x64
+>gflags.exe -p /enable masvc.exe /full
+
+You will see the following:
+               path: SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options
+                masvc.exe: page heap enabled
+Type:
+               >gflags.exe -p masvc.exe
+
+You will see the following:
+               Page heap is enabled for masvc.exe with flags (full traces )
+
+Start up the McAfee Agent service 
+
+Using the same CMD window, navigate to where you have procdump, and type in the following:
+               > procdump.exe -ma  -e  masvc.exe
+Wait for the crash. Here is the critical part: Once it crashes, you MUST verify that the event log shows the agent service termination warning. 
+Once all that happens, IMMEDIATELY collect a MER
+
+Do you know what step they get to before seeing an error?
+
+*******************************************************************************************************************
+kapil commant
+after installing the build run below command for enable heap using gflag.exe
+Disable self protection from EPO
+1. C:\Program Files (x86)\Windows Kits\10\Debuggers\x64>gflags.exe -p
+2. C:\Program Files (x86)\Windows Kits\10\Debuggers\x64>gflags.exe -p /enable "C:\Program
+Files\McAfee\Agent\masvc.exe" /full
+3. C:\Program Files (x86)\Windows Kits\10\Debuggers\x64>gflags.exe -p
+it will show output like below.
+path: SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options
+masvc.exe: page heap enabled with flags (full traces )
+6. procdump -ma -e -w masvc.exe
+IMPORTANT: The command prompt must stay open until the exception occurs and the dump is generated.
+you can download the procdump exe from below link.
+https://learn.microsoft.com/en-us/sysinternals/downloads/procdump
+7. then capture the procdump and MER log while crashing using procdump.exe.
+8. after capture the MER and procdump you can disable heap using below command.
+C:\Program Files (x86)\Windows Kits\10\Debuggers\x64>gflags.exe -p /disable "C:\Program Files\McAfee\Agent\masvc.exe"
+
+If any dout or info required , please let me know.
